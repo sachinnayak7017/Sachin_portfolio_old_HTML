@@ -45,9 +45,50 @@ Or just open `index.html` directly in a browser (some browsers restrict local `f
 
 ## Deployment (GitHub Pages, free)
 
-1. Push this repo to GitHub.
-2. Go to the repo's **Settings → Pages**.
-3. Under "Build and deployment", set Source to **Deploy from a branch**, branch `main`, folder `/ (root)`.
-4. Save. The site publishes at `https://<username>.github.io/<repo-name>/`.
+### First-time setup
 
-To update the live site: edit `data.js` (and/or add files to `resources/`), commit, push. GitHub Pages redeploys automatically — no build step runs.
+1. **Make sure you're pushing as your own GitHub account.** Check identity:
+   ```
+   git config --global user.name
+   git config --global user.email
+   ```
+   If it shows someone else's name, set your own:
+   ```
+   git config --global user.name "Sachin Kumar"
+   git config --global user.email "sachinnayak7017@gmail.com"
+   ```
+
+2. **Generate a Personal Access Token** (GitHub no longer accepts your account password over the command line):
+   - GitHub → profile photo (top right) → **Settings**
+   - Left sidebar, bottom → **Developer settings**
+   - **Personal access tokens → Tokens (classic) → Generate new token (classic)**
+   - Give it a name, set an expiry, tick the **repo** scope, click **Generate token**
+   - Copy the token immediately (it's shown only once)
+
+3. **Push the repo:**
+   ```
+   git remote add origin https://github.com/<your-username>/<repo-name>.git
+   git branch -M main
+   git push -u origin main
+   ```
+   When prompted:
+   - Username: your GitHub username
+   - Password: paste the **token** (not your GitHub password)
+
+4. **Turn on GitHub Pages:**
+   - Go to the repo on GitHub → **Settings → Pages**
+   - Under "Build and deployment", set Source to **Deploy from a branch**
+   - Branch: `main`, folder: `/ (root)` → **Save**
+   - Wait about a minute — the site publishes at `https://<username>.github.io/<repo-name>/`
+
+### Updating the live site (every time after)
+
+No separate "redeploy" step exists — pushing to `main` **is** the redeploy.
+
+```
+git add -A
+git commit -m "describe what changed"
+git push
+```
+
+GitHub Pages picks up the push automatically and rebuilds the live site (usually live within a minute — no build step runs, since this is a static site). Refresh the live URL to see your change.
