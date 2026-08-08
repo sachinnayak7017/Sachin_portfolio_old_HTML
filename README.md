@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sachin Kumar — Portfolio
 
-## Getting Started
+Plain HTML/CSS/JS personal portfolio. No Node, no npm, no build step. React and Babel are loaded from a CDN in the browser.
 
-First, run the development server:
+## Files
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+index.html      page shell, loads React/Babel from CDN and app.jsx
+data.js         all content — edit this to update the site
+app.jsx         all React components (JSX, compiled in-browser by Babel)
+styles.css      styling and animations
+robots.txt      SEO
+resources/      resume PDF, profile photo, project screenshots, certificates
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Editing content
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Open `data.js` in any text editor and change the values. Save, refresh the browser — no build step.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Adding files
 
-## Learn More
+Put files in the matching `resources/` subfolder, then reference the path (relative to the site root) in `data.js`:
 
-To learn more about Next.js, take a look at the following resources:
+- `resources/resume/` — your resume PDF (`profile.resumePath`)
+- `resources/images/` — your profile photo (`profile.photoPath`) and other images
+- `resources/projects/` — project screenshots (`project.image`)
+- `resources/certificates/` — certificates linked to a project (`project.certificatePath`)
+- `resources/notes/` — student resource files (short notes, PDFs, resume templates, etc.)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Project demo videos and resource videos use a normal YouTube link (`project.videoUrl` / `resource.videoUrl`) — no file upload needed.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Student Resources section
 
-## Deploy on Vercel
+Edit the `resources` array in `data.js`. Each entry needs a `title`, `category` (e.g. "DSA", "Java", "Spring Boot"), and a `type` — this is free text, so use whatever label fits ("Short Note", "Video", "PDF", "Resume Template", "Other", ...). Set `videoUrl` for a video entry, or `filePath` (pointing into `resources/notes/`) for anything downloadable.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Running locally
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Any static file server works, e.g.:
+
+```
+npx serve .
+```
+
+Or just open `index.html` directly in a browser (some browsers restrict local `fetch`, but this site doesn't use any).
+
+## Deployment (GitHub Pages, free)
+
+1. Push this repo to GitHub.
+2. Go to the repo's **Settings → Pages**.
+3. Under "Build and deployment", set Source to **Deploy from a branch**, branch `main`, folder `/ (root)`.
+4. Save. The site publishes at `https://<username>.github.io/<repo-name>/`.
+
+To update the live site: edit `data.js` (and/or add files to `resources/`), commit, push. GitHub Pages redeploys automatically — no build step runs.
