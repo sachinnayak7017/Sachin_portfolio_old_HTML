@@ -2,13 +2,13 @@
 const DATA = {
   profile: {
     name: "Sachin Kumar",
-    role: "Java Backend Developer | Spring Boot & Microservices",
+    role: "Java Backend Developer | Spring Boot • Microservices • API Security",
     location: "Saharanpur, Uttar Pradesh",
     email: "sachinnayak7017@gmail.com",
     phone: "+91-7017253361",
     summary:
       "Java Backend Developer specializing in Spring Boot and microservices, currently building secure REST APIs for digital banking at Shivalik Small Finance Bank, serving 500,000+ active users. Strong foundation in Data Structures & Algorithms, API security (JWT/OAuth 2.0), and production-grade system design. Focused on backend engineering roles at both product and service-based companies.",
-    heroTagline: "Java Backend Developer building secure, high-scale microservices — currently sharpening DSA for product-company interviews.",
+    heroTagline: "Java Backend Developer building secure REST APIs and microservices for digital banking — focused on scalable backend engineering and DSA.",
     photoPath: "resources/images/profile.jpg", // put your photo at this path (leave blank to hide)
     resumePath: "resources/resume/Sachin_Kumar_Resume.pdf",
     badges: [
@@ -22,6 +22,8 @@ const DATA = {
       "MySQL",
       "Docker",
       "AWS",
+      "Kubernetes",
+      "Jenkins / CI-CD",
     ],
     socialLinks: [
       { label: "GitHub", url: "https://github.com/sachinnayak7017/", icon: "github" },
@@ -42,7 +44,7 @@ const DATA = {
   experience: [
     {
       company: "Shivalik Small Finance Bank (SSFB)",
-      role: "System Engineer - Java Backend Developer (Assistant Manager)",
+      role: "System Engineer — Java Backend Developer (Assistant Manager)",
       employmentType: "Full-time",
       startDate: "Nov 2025",
       endDate: "Present",
@@ -179,8 +181,9 @@ const DATA = {
       skills: ["Spring Boot", "Spring MVC", "Spring Security", "Spring Data JPA", "Hibernate", "Microservices", "RESTful APIs", "Maven", "JWT", "OAuth"],
     },
     { name: "Testing & Automation", skills: ["Selenium WebDriver", "Rest Assured", "JUnit", "Postman"] },
-    { name: "Databases", skills: ["MySQL", "MongoDB", "Oracle Database"] },
-    { name: "Cloud & DevOps", skills: ["Docker", "Git", "GitHub", "AWS (EC2, S3)"] },
+    { name: "Cloud & DevOps", skills: ["Docker", "Kubernetes", "Git", "GitHub", "Jenkins", "CI/CD", "AWS (EC2, S3)"] },
+    { name: "Databases", skills: ["MySQL", "MongoDB", "Oracle Database", "PostgreSQL"] },
+    { name: "Learning Focus", skills: ["Linux", "Apache Kafka", "System Design", "AWS", "Advanced Microservices"] },
     { name: "Frontend", skills: ["HTML5", "CSS3", "Bootstrap"] },
     { name: "Tools & IDEs", skills: ["IntelliJ IDEA", "Eclipse", "Spring Tool Suite (STS)", "Visual Studio Code"] },
   ],
