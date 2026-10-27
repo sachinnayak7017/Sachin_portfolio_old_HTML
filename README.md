@@ -55,7 +55,7 @@ Or just open `index.html` directly in a browser (some browsers restrict local `f
    If it shows someone else's name, set your own:
    ```
    git config --global user.name "Sachin Kumar"
-   git config --global user.email "sachinnayak7017@gmail.com"
+   git config --global user.email "sachin@email.com"
    ```
 
 2. **Generate a Personal Access Token** (GitHub no longer accepts your account password over the command line):
